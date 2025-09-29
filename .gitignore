@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+
+# Icon assets (if stored locally)
+*.ico
+*.png
+*.svg
+*.webp
+icons/
+assets/icons/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Vercel build output
+.vercel/
