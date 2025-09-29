@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Landing from "./pages/Landing";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Landing from "./pages/LandingPage";
+import Login from "./pages/LoginPage";
+import Signup from "./pages/SignupPage";
 import Dashboard from "./pages/Dashboard";
 import Preferences from "./pages/Preferences";
 import Designs from "./pages/Designs";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Settings, Eye, Wand2 } from "lucide-react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Layout/Sidebar";
 
 const Dashboard = ({
   currentPath,
