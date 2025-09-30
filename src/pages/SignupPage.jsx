@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 
 const Signup = ({
@@ -9,8 +10,14 @@ const Signup = ({
   password,
   setPassword,
   onAuth,
-  onNavigate,
 }) => {
+  const navigate = useNavigate();
+
+  const handleSignup = () => {
+    onAuth();
+    navigate("/dashboard");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-purple-50 flex items-center justify-center p-6">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
@@ -61,7 +68,7 @@ const Signup = ({
           </div>
 
           <button
-            onClick={onAuth}
+            onClick={handleSignup}
             className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition shadow-md"
           >
             Create Account
@@ -71,7 +78,7 @@ const Signup = ({
         <p className="text-center mt-6 text-purple-700">
           Already have an account?{" "}
           <button
-            onClick={() => onNavigate("/login")}
+            onClick={() => navigate("/login")}
             className="text-purple-600 font-semibold hover:underline"
           >
             Sign In

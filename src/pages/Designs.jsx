@@ -1,21 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Wand2 } from "lucide-react";
 import Sidebar from "../components/Layout/Sidebar";
 
 const Designs = ({
-  currentPath,
-  onNavigate,
   onLogout,
   sidebarOpen,
   setSidebarOpen,
   designOptions,
   generateDesigns,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
       <Sidebar
-        currentPath={currentPath}
-        onNavigate={onNavigate}
         onLogout={onLogout}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
@@ -62,7 +61,7 @@ const Designs = ({
                     </h3>
                     <p className="text-purple-700 mb-4">{design.style}</p>
                     <button
-                      onClick={() => onNavigate("/ar")}
+                      onClick={() => navigate("/ar")}
                       className="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition shadow-md"
                     >
                       View in AR
