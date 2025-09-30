@@ -1,19 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Settings, Eye, Wand2 } from "lucide-react";
 import Sidebar from "../components/Layout/Sidebar";
 
-const Dashboard = ({
-  currentPath,
-  onNavigate,
-  onLogout,
-  sidebarOpen,
-  setSidebarOpen,
-}) => {
+const Dashboard = ({ onLogout, sidebarOpen, setSidebarOpen }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
       <Sidebar
-        currentPath={currentPath}
-        onNavigate={onNavigate}
         onLogout={onLogout}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
@@ -31,7 +26,7 @@ const Dashboard = ({
           <div className="grid grid-cols-1 gap-6">
             <div
               className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border border-purple-100 w-full"
-              onClick={() => onNavigate("/preferences")}
+              onClick={() => navigate("/preferences")}
             >
               <div className="flex items-center gap-6">
                 <Settings className="text-purple-600 flex-shrink-0" size={48} />
@@ -48,7 +43,7 @@ const Dashboard = ({
 
             <div
               className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border border-purple-100 w-full"
-              onClick={() => onNavigate("/designs")}
+              onClick={() => navigate("/designs")}
             >
               <div className="flex items-center gap-6">
                 <Wand2 className="text-purple-600 flex-shrink-0" size={48} />
@@ -65,7 +60,7 @@ const Dashboard = ({
 
             <div
               className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer border border-purple-100 w-full"
-              onClick={() => onNavigate("/ar")}
+              onClick={() => navigate("/ar")}
             >
               <div className="flex items-center gap-6">
                 <Eye className="text-purple-600 flex-shrink-0" size={48} />

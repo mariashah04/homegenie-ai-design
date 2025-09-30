@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   Home,
   Settings,
@@ -10,13 +11,11 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const Sidebar = ({
-  currentPath,
-  onNavigate,
-  onLogout,
-  sidebarOpen,
-  setSidebarOpen,
-}) => {
+const Sidebar = ({ onLogout, sidebarOpen, setSidebarOpen }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <div
       className={`${
@@ -44,7 +43,7 @@ const Sidebar = ({
 
       <nav className="flex-1 p-4 space-y-2">
         <button
-          onClick={() => onNavigate("/dashboard")}
+          onClick={() => navigate("/dashboard")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition ${
             currentPath === "/dashboard"
               ? "bg-purple-100 text-purple-900"
@@ -56,7 +55,7 @@ const Sidebar = ({
         </button>
 
         <button
-          onClick={() => onNavigate("/preferences")}
+          onClick={() => navigate("/preferences")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition ${
             currentPath === "/preferences"
               ? "bg-purple-100 text-purple-900"
@@ -68,7 +67,7 @@ const Sidebar = ({
         </button>
 
         <button
-          onClick={() => onNavigate("/designs")}
+          onClick={() => navigate("/designs")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition ${
             currentPath === "/designs"
               ? "bg-purple-100 text-purple-900"
@@ -80,7 +79,7 @@ const Sidebar = ({
         </button>
 
         <button
-          onClick={() => onNavigate("/ar")}
+          onClick={() => navigate("/ar")}
           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition ${
             currentPath === "/ar"
               ? "bg-purple-100 text-purple-900"

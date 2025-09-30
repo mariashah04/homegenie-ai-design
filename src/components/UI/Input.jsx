@@ -1,3 +1,5 @@
+// src/components/UI/Input.jsx
+
 import React from "react";
 
 const Input = ({ label, className = "", ...props }) => {

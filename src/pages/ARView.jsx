@@ -2,18 +2,10 @@ import React from "react";
 import { Eye } from "lucide-react";
 import Sidebar from "../components/Layout/Sidebar";
 
-const ARView = ({
-  currentPath,
-  onNavigate,
-  onLogout,
-  sidebarOpen,
-  setSidebarOpen,
-}) => {
+const ARView = ({ onLogout, sidebarOpen, setSidebarOpen }) => {
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
       <Sidebar
-        currentPath={currentPath}
-        onNavigate={onNavigate}
         onLogout={onLogout}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}

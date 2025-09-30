@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Sparkles, Wand2, Eye } from "lucide-react";
 
-const Landing = ({ onNavigate }) => {
+const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-50 to-purple-50">
       <nav className="p-6 flex justify-between items-center">
@@ -10,7 +13,7 @@ const Landing = ({ onNavigate }) => {
           <span className="text-purple-900 text-2xl font-bold">HomeGenie</span>
         </div>
         <button
-          onClick={() => onNavigate("/login")}
+          onClick={() => navigate("/login")}
           className="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition shadow-md"
         >
           Get Started

@@ -1,20 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Layout/Sidebar";
 
 const Preferences = ({
-  currentPath,
-  onNavigate,
   onLogout,
   sidebarOpen,
   setSidebarOpen,
   preferences,
   setPreferences,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
       <Sidebar
-        currentPath={currentPath}
-        onNavigate={onNavigate}
         onLogout={onLogout}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
@@ -82,7 +81,7 @@ const Preferences = ({
             </div>
 
             <button
-              onClick={() => onNavigate("/designs")}
+              onClick={() => navigate("/designs")}
               className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition shadow-md"
             >
               Save & Continue
